@@ -92,6 +92,39 @@
             <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
             <version>1.0.17</version>
         </dependency>
+
+<!--        AI模型内置JSON结构化输出-->
+        <dependency>
+            <groupId>com.github.victools</groupId>
+            <artifactId>jsonschema-generator</artifactId>
+            <version>4.38.0</version>
+        </dependency>
+<!--        构造自定义文件chatMemory 所需要的序列化器-->
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>5.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.9</version>
+        </dependency>
+
+
+        <!-- MySQL 8.x 驱动 -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+
+
+
+
+
     </dependencies>
 
     <build>

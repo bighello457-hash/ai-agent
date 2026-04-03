@@ -15,7 +15,6 @@ import reactor.core.publisher.Flux;
 @Slf4j
 public class myLogAdvisor implements CallAdvisor, StreamAdvisor {
 
-	private static final Logger logger = LoggerFactory.getLogger(myLogAdvisor.class);
 
 	@Override
 	public String getName() { 
@@ -45,6 +44,7 @@ public class myLogAdvisor implements CallAdvisor, StreamAdvisor {
 		logRequest(chatClientRequest);
 
 		Flux<ChatClientResponse> chatClientResponses = streamAdvisorChain.nextStream(chatClientRequest);
+
 
 		return new ChatClientMessageAggregator().aggregateChatClientResponse(chatClientResponses, this::logResponse);
 	}

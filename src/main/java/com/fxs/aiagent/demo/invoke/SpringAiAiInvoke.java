@@ -11,20 +11,13 @@ import org.springframework.stereotype.Component;
  * 通过spring ai框架调用ai大模型
  */
 @Component
-public class SpringAiAiInvoke implements CommandLineRunner {
+public class SpringAiAiInvoke  {
     /**
      * 之所以能够自动导入，因为我已经在配置文件中配置了就会自动依赖注入一个chatmodel
      */
     @Resource
     private ChatModel dashscopeChatModel;
-    @Override
-    public void run(String... args) throws Exception {
-        AssistantMessage assistantMessage
-                = dashscopeChatModel.call(new Prompt("hello"))
-                .getResult()
-                .getOutput();
-        System.out.println(assistantMessage.getText());
-    }
+
 
 
 
