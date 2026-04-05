@@ -13,6 +13,9 @@ import com.alibaba.dashscope.exception.UploadFileException;
 import com.alibaba.dashscope.utils.JsonUtils;
 import com.alibaba.dashscope.utils.Constants;
 
+/**
+ * 多模态模型调用
+ */
 public class Main {
 
     // 各地域配置不同，请根据实际地域修改

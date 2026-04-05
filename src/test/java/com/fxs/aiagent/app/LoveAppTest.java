@@ -69,4 +69,31 @@ class LoveAppTest {
         Assertions.assertNotNull(response);
         Assertions.assertTrue(response.contains("不符合公序良俗"));
     }
+
+   /* @Test
+    void doChatWithVectorStore() {
+        String chatId= UUID.randomUUID().toString();
+        String message = "我最近想给女朋友准备惊喜该怎样准备呢？";
+        String answer = loveApp.doChatWithVectorStore(message, chatId);
+        log.info("回答：{}", answer);
+        Assertions.assertNotNull(answer);
+    }*/
+
+    @Test
+    void doChatWithRag() {
+        String chatId= UUID.randomUUID().toString();
+        String message = "我最近想给女朋友准备惊喜该怎样准备呢？";
+        String answer = loveApp.doChatWithRag(message, chatId);
+        log.info("回答：{}", answer);
+        Assertions.assertNotNull(answer);
+    }
+
+    @Test
+    void doChatWithAppVectorStore() {
+        String chatId= UUID.randomUUID().toString();
+        String message = "我是狮子座，性格比较和蔼可亲，我希望能够找一个可爱的女朋友，你有没有什么推荐的对象";
+        String answer = loveApp.doChatWithAppVectorStore(message, chatId);
+        log.info("回答：{}", answer);
+        Assertions.assertNotNull(answer);
+    }
 }

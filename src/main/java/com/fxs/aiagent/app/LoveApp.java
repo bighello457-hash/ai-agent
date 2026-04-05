@@ -3,12 +3,18 @@ package com.fxs.aiagent.app;
 import com.fxs.aiagent.advisor.ProfanityFilterAdvisor;
 import com.fxs.aiagent.advisor.TimeAdvisor;
 import com.fxs.aiagent.chatMemory.FileBasedChatMemory;
+import com.fxs.aiagent.rag.LoveAppVectorStoreConfig;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.client.advisor.api.Advisor;
+import org.springframework.ai.chat.client.advisor.vectorstore.QuestionAnswerAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
 import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.stereotype.Component;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
+
 
 import java.util.List;
 
@@ -69,4 +75,50 @@ public class LoveApp {
         log.info("loveReport:{}", result);
         return result;
     }
+
+
+    /*@Resource
+    private VectorStore loveAppVectorStore;
+    public String doChatWithVectorStore(String message,String chatId){
+        ChatResponse chatResponse = chatClient.prompt()
+                .user(message)
+                .advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, chatId))
+                .advisors(QuestionAnswerAdvisor.builder(loveAppVectorStore).build())
+                .call()
+                .chatResponse();
+        String content = chatResponse.getResult().getOutput().getText();
+        log.info("content:{}",content);
+        return content;
+    }*/
+
+    @Resource
+    private Advisor loveAppRagCloudAdvisor;
+
+    public String doChatWithRag(String message,String chatId){
+        ChatResponse chatResponse = chatClient.prompt()
+                .user(message)
+                .advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, chatId))
+                .advisors(loveAppRagCloudAdvisor)
+                .call()
+                .chatResponse();
+        String content = chatResponse.getResult().getOutput().getText();
+        log.info("content:{}",content);
+        return content;
+    }
+
+    @Resource
+    private VectorStore LoveAppVectorStore;
+
+    public String doChatWithAppVectorStore(String message,String chatId){
+        String content = chatClient.prompt()
+                .user(message)
+                .advisors(advisorSpec -> advisorSpec.param(ChatMemory.CONVERSATION_ID, chatId))
+                .advisors(QuestionAnswerAdvisor.builder(LoveAppVectorStore).build())
+                .call()
+                .chatResponse()
+                .getResult().getOutput().getText();
+        return content;
+    }
+
+
 }
