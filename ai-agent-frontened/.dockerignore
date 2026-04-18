@@ -1,0 +1,84 @@
+# Dependencies installed inside the image
+node_modules/
+.pnp/
+.pnp.js
+.pnpm-store/
+
+# Vite / frontend build outputs and caches
+dist/
+build/
+coverage/
+.vite/
+.cache/
+.parcel-cache/
+.turbo/
+.tmp/
+.temp/
+*.tsbuildinfo
+
+# Environment files
+# Keep .env.production because Vite reads it during production builds.
+.env
+.env.local
+.env.*.local
+.env.development
+.env.example
+!.env.production
+
+# Logs and debug output
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor and IDE files
+.vscode/
+.idea/
+.cursor/
+.claude/
+*.swp
+*.swo
+*~
+*.iml
+
+# Version control and CI metadata
+.git/
+.gitignore
+.gitattributes
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+Jenkinsfile
+
+# Docker files are needed by the builder, but not by COPY . .
+Dockerfile
+Dockerfile.*
+.dockerignore
+docker-compose.yml
+docker-compose*.yml
+compose.yml
+compose*.yaml
+
+# OS files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local archives and generated packages
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+
+# Optional local reports
+playwright-report/
+test-results/
+reports/

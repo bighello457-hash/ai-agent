@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn test:*)",
+      "Bash(mvn clean:*)",
+      "WebSearch",
+      "WebFetch(domain:search.maven.org)",
+      "Bash(mvn dependency:tree)",
+      "Bash(mvn dependency:tree -Dincludes=com.fasterxml.jackson.core:*,com.fasterxml.jackson.module:*)",
+      "Bash(jar xf:*)",
+      "Bash(javap -p 'org/springframework/ai/rag/advisor/RetrievalAugmentationAdvisor$Builder.class')",
+      "Bash(jar tf:*)",
+      "Bash(javap -p org/springframework/ai/rag/preretrieval/query/expansion/QueryExpander.class)",
+      "Bash(javap -p \"org/springframework/ai/rag/preretrieval/query/expansion/MultiQueryExpander.class\")"
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# IDE and editor files
+.idea/
+.vscode/
+.cursor/
+.claude/
+*.iml
+*.swp
+*.swo
+*~
+
+# Maven / Java build outputs
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Frontend workspace artifacts
+ai-agent-frontened/node_modules/
+ai-agent-frontened/dist/
+ai-agent-frontened/.vite/
+ai-agent-frontened/.cache/
+ai-agent-frontened/.tmp/
+ai-agent-frontened/.temp/
+ai-agent-frontened/*.log
+
+# Local runtime data and generated files
+chat-memory/
+tep/
+logs/
+tmp/
+*.log
+
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+application-local.yml
+application-dev.yml
+*.pem
+*.key
+*.p12
+*.jks
+
+# Docker / local orchestration files not needed inside COPY
+Dockerfile*
+.dockerignore
+docker-compose.yml
+docker-compose*.yml
+compose.yml
+compose*.yaml
+
+# OS files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Archives and local exported packages
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+backend.zip
+
+# Test and report output
+**/surefire-reports/
+**/failsafe-reports/
+coverage/
+reports/
+playwright-report/
+test-results/

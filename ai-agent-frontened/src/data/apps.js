@@ -1,0 +1,37 @@
+export const appCatalog = [
+  {
+    id: 'offer-pilot',
+    name: 'OfferPilot',
+    shortName: 'OP',
+    subtitle: '求职陪跑应用',
+    description: '围绕简历、面试、Offer 判断与职业选择展开对话。',
+    endpoint: '/ai/love_app/chat/sse',
+    includeChatId: true,
+    storageKey: 'offerpilot.messages',
+    chatIdKey: 'offerpilot.chatId',
+    accent: '#20f7d2',
+    accentSoft: '#073d4f',
+    signal: 'SSE',
+    greeting:
+      '你好，我是 OfferPilot。可以把你的求职目标、简历片段或面试问题发给我，我们一起拆解下一步。',
+    prompt: '输入你的求职问题、岗位信息或面试复盘',
+  },
+  {
+    id: 'super-agent',
+    name: 'AI 超级智能体',
+    shortName: 'AI',
+    subtitle: '多工具任务执行应用',
+    description: '适合复杂任务拆解、工具调用、资料整理与执行反馈。',
+    endpoint: '/ai/manus/chat',
+    includeChatId: false,
+    responseMode: 'steps',
+    storageKey: 'manus.messages',
+    chatIdKey: 'manus.chatId',
+    accent: '#ff4fd8',
+    accentSoft: '#33105a',
+    signal: 'Agent',
+    greeting:
+      '你好，我是 AI 超级智能体。告诉我你要完成的任务，我会把执行过程实时展示在这里。',
+    prompt: '描述一个需要智能体执行的任务',
+  },
+]
