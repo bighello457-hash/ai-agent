@@ -45,7 +45,7 @@
 ai-agent
 ├── src/main/java/com/fxs/aiagent
 │   ├── agent              # Agent 抽象、ReAct Agent、ToolCall Agent、FxsManus
-│   ├── app                # OfferPilot、LoveApp、足球分析等应用封装
+│   ├── app                # OfferPilot
 │   ├── advisor            # ChatClient Advisor 扩展
 │   ├── chatMemory         # 文件 / MySQL 会话记忆
 │   ├── config             # CORS、工具注册、MCP 工具聚合等配置
